@@ -87,3 +87,35 @@ console.log("5" * 2);       // 10   // "5" is converted to number → 5 * 2 = 10
 console.log(true + true);   // 2    // true is treated as 1 → 1 + 1 = 2
 console.log([] + []);       // ""  // Empty array is converted to an empty string
 console.log({} + {});       // "[object Object][object Object]" // Objects are converted to strings
+
+// Q. Why does console.log([] + []) return an empty string?
+// Answer:
+// When using +, JavaScript converts both arrays to strings.
+// An empty array converts to an empty string "".
+// So, [] + [] results in "".
+// console.log([] + []);  // ""
+// console.log([1,2] + [3,4]); // "1,23,4"
+
+// Q. What happens when adding a number and an array?
+// Answer:
+// JavaScript converts the array to a string and then applies string concatenation.
+console.log(5 + []);  // "5" (Array → String)
+console.log(5 + [1,2]); // "51,2"
+
+// Q. Why does console.log([] == false) return true?
+// Answer:
+// == triggers type coercion.
+// Boolean([]) is true, but [] is converted to a string "", which is falsy.
+// So "" == false becomes true.
+
+console.log([] == false);  // true
+console.log([] == 0);      // true (as 0 === false AND (false == false) will be true )
+console.log([1] == true);  // true (1 == true)
+console.log([2] == true);  // false (2 != true)
+
+// How does JavaScript convert objects to primitive values?
+// Answer:
+// JavaScript calls valueOf() or toString() when converting objects.
+
+let obj11 = { valueOf() { return 42; } };
+console.log(obj11 + 5); // 47
