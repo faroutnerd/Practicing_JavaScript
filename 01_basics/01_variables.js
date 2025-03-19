@@ -25,13 +25,38 @@ console.log(accountCity);
 
 console.table([accountId, accountEmail, accountPassword, accountCity, accountState])
 
+// Hoisting in Javascript
+console.log(x); // Undefined (var is hoisted)
+var x = 5;
+
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 10;
+
+{
+    let x = 10;
+}
+  console.log(x);   // ReferenceError: x is not defined
+
+
 /*
 Basic Questions
 1. What are the different ways to declare variables in JavaScript?
+ -> var a = 10;   // Function-scoped, can be redeclared and updated
+    let b = 20;   // Block-scoped, cannot be redeclared but can be updated
+    const c = 30; // Block-scoped, cannot be redeclared or updated
+
 2. What is the difference between var, let, and const?
+
 3. What happens if you declare a variable without var, let, or const?
+
 4. Can you redeclare a variable using var, let, and const?
+ -> var can be redeclared.
+    let and const cannot be redeclared.
+
 5. What is hoisting, and how does it affect variables?
+ -> The Temporal Dead Zone (TDZ) is the time between variable declaration and initialization 
+    where accessing the variable causes a ReferenceError.
+
 6. What is the scope of var, let, and const in JavaScript?
 
 Intermediate Questions;
