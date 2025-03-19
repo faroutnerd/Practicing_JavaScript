@@ -59,3 +59,109 @@ let someNumber = 33
 let stringNumber = String(someNumber)
 console.log(stringNumber);      // 33 -> It is a string.
 console.log(typeof stringNumber);   // string
+
+
+// 1. Examples of Implicit Conversion:
+
+// Number to String Conversion
+console.log("The number is " + 42);  // "The number is 42"
+console.log(10 + "5");               // "105" (Number → String)
+console.log(true + " is true");      // "true is true"
+console.log("5" + 6);                // 
+console.log(typeof("5" + 6));
+
+// String to Number Conversion (when using -, *, / or %)
+console.log("10" - 5);  // 5   (String → Number)
+console.log("10" * 2);  // 20  (String → Number)
+console.log("20" / 2);  // 10  (String → Number)
+console.log("5" % 2);   // 1   (String → Number)
+
+// Boolean to Number Conversion
+console.log(true + 1);   // 2  (true → 1)
+console.log(false + 5);  // 5  (false → 0)
+console.log(5 * true);   // 5  (true → 1)
+
+// null and undefined Conversion
+console.log(null + 5);      // 5   (null → 0)
+console.log(undefined + 5); // NaN (undefined → NaN)
+
+
+// 2. Explicit Type Conversion (Type Casting)
+
+// Convert to Number
+console.log(Number("42"));       // 42
+console.log(Number("3.14"));     // 3.14
+console.log(Number("Hello"));    // NaN (Not a Number)
+console.log(Number(true));       // 1
+console.log(Number(false));      // 0
+console.log(Number(null));       // 0
+console.log(Number(undefined));  // NaN
+
+// Using parseInt() and parseFloat()
+console.log(parseInt("100px"));    // 100 (ignores non-numeric characters)
+console.log(parseFloat("3.14cm")); // 3.14
+console.log(parseInt("abc"));      // NaN
+
+// Convert to String
+// Use String() or .toString()
+console.log(String(42));         // "42"
+console.log(String(true));       // "true"
+console.log(String(null));       // "null"
+console.log((123).toString());   // "123"
+
+// Convert to Boolean
+
+// Falsy Values (Convert to false)
+// 0
+// "" (empty string)
+// null
+// undefined
+// NaN
+
+// Truthy Values (Convert to true)
+// All non-zero numbers
+// "Hello"
+// [] (empty array)
+// {} (empty object)
+
+console.log(Boolean(1));      // true
+console.log(Boolean(0));      // false
+console.log(Boolean("Hello")); // true
+console.log(Boolean(""));     // false
+console.log(Boolean([]));     // true (Empty array is truthy)
+console.log(Boolean({}));     // true (Empty object is truthy)
+
+
+// 3. Special Cases in Type Conversion
+
+// 3.1 null and undefined
+console.log(Number(null));       // 0
+console.log(Number(undefined));  // NaN
+console.log(Boolean(null));      // false
+console.log(Boolean(undefined)); // false
+console.log(String(null));       // "null"
+console.log(String(undefined));  // "undefined"
+
+// 3.2 Objects and Arrays
+console.log(Number([10]));    // 10 (array with single number)
+console.log(Number([1,2,3])); // NaN (multiple numbers in array)
+console.log(String([1,2,3])); // "1,2,3" (array converted to string)
+console.log(Boolean({}));     // true (non-empty object)
+console.log(Boolean([]));     // true (empty array)
+
+const typeConversionTable = [
+    { Value: `"123"`, Number: Number("123"), String: String("123"), Boolean: Boolean("123") },
+    { Value: `""`, Number: Number(""), String: String(""), Boolean: Boolean("") },
+    { Value: `"abc"`, Number: Number("abc"), String: String("abc"), Boolean: Boolean("abc") },
+    { Value: `true`, Number: Number(true), String: String(true), Boolean: Boolean(true) },
+    { Value: `false`, Number: Number(false), String: String(false), Boolean: Boolean(false) },
+    { Value: `null`, Number: Number(null), String: String(null), Boolean: Boolean(null) },
+    { Value: `undefined`, Number: Number(undefined), String: String(undefined), Boolean: Boolean(undefined) },
+    { Value: `{}`, Number: Number({}), String: String({}), Boolean: Boolean({}) },
+    { Value: `[]`, Number: Number([]), String: String([]), Boolean: Boolean([]) },
+    { Value: `[10]`, Number: Number([10]), String: String([10]), Boolean: Boolean([10]) },
+    { Value: `[1,2]`, Number: Number([1, 2]), String: String([1, 2]), Boolean: Boolean([1, 2]) }
+  ];
+  
+  console.table(typeConversionTable);
+  
