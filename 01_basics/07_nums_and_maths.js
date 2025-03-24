@@ -1,68 +1,68 @@
-// const score = 400
-// console.log(score); // 400
+const score = 400
+console.log(score); // 400
 
-// const balance = new Number(100) // explicityly defining Number
-// console.log(balance);   // [Number: 100]
+const balance = new Number(100) // explicityly defining Number
+console.log(balance);   // [Number: 100]
 
-// console.log(balance.toString().length);  //digits  -> 3
-// console.log(balance.toFixed(2));    // 100.00
+console.log(balance.toString().length);  //digits  -> 3
+console.log(balance.toFixed(2));    // 100.00
 
-// const otherNumber = 123.89665
-// console.log(otherNumber.toPrecision(1));    // 1e+2 -> 1 * 10²
-// console.log(otherNumber.toPrecision(2));    // 1.2e+2 -> 1.2 * 10²
-// console.log(otherNumber.toPrecision(3));    // 124
-// console.log(otherNumber.toPrecision(4));    // 124.9
-// console.log(otherNumber.toPrecision(5));    // 123.90
+const otherNumber = 123.89665
+console.log(otherNumber.toPrecision(1));    // 1e+2 -> 1 * 10²
+console.log(otherNumber.toPrecision(2));    // 1.2e+2 -> 1.2 * 10²
+console.log(otherNumber.toPrecision(3));    // 124
+console.log(otherNumber.toPrecision(4));    // 124.9
+console.log(otherNumber.toPrecision(5));    // 123.90
 
-// const hundreds = 1000000
-// console.log(hundreds.toLocaleString()); //1,000,000 -> US
-// console.log(hundreds.toLocaleString('en-IN')); // 10,00,000 -> Indian
+const hundreds = 1000000
+console.log(hundreds.toLocaleString()); //1,000,000 -> US
+console.log(hundreds.toLocaleString('en-IN')); // 10,00,000 -> Indian
 
-// // +++++++++++++ Maths +++++++++++++++++++++++++++++
+// +++++++++++++ Maths +++++++++++++++++++++++++++++
 
-// console.log(Math);  // Object [Math] {} -> its an object and having many different properties
-// console.log(Math.abs(-4));  // 4 -> absolute value
-// console.log(Math.round(4.6));   // 5 -> round-off
-// console.log(Math.ceil(4.2));    // 5 -> least number
-// console.log(Math.ceil(-4.2));    // -4 -> least number
-// console.log(Math.floor(4.9));   // 4 -> excluding the decimal part
-// console.log(Math.min(4, 3, 6, 8));  // 3 -> Minimum
-// console.log(Math.max(4, 3, 6, 8));  // 8 -> Maximum
-// console.log(Math.sqrt(25));  // 5 -> square root of 25
-// console.log(Math.pow(8, 3));  // 8 to the power 3 = 512
+console.log(Math);  // Object [Math] {} -> its an object and having many different properties
+console.log(Math.abs(-4));  // 4 -> absolute value
+console.log(Math.round(4.6));   // 5 -> round-off
+console.log(Math.ceil(4.2));    // 5 -> least number
+console.log(Math.ceil(-4.2));    // -4 -> least number
+console.log(Math.floor(4.9));   // 4 -> excluding the decimal part
+console.log(Math.min(4, 3, 6, 8));  // 3 -> Minimum
+console.log(Math.max(4, 3, 6, 8));  // 8 -> Maximum
+console.log(Math.sqrt(25));  // 5 -> square root of 25
+console.log(Math.pow(8, 3));  // 8 to the power 3 = 512
 
-// console.log(Math.random());     // always between 0 and 1
-// console.log((Math.random()*10) + 1);    // mutliply by 10 make it between 1 and 11
-// console.log(Math.floor(Math.random()*10) + 1);  // using the floor property make it between only natural number b/w 1 and 10
+console.log(Math.random());     // always between 0 and 1
+console.log((Math.random()*10) + 1);    // mutliply by 10 make it between 1 and 11
+console.log(Math.floor(Math.random()*10) + 1);  // using the floor property make it between only natural number b/w 1 and 10
 
-// const min = 10
-// const max = 20
+const min = 10
+const max = 20
 
-// console.log(Math.floor(Math.random() * (max - min + 1)) + min)  // random value between two integer
+console.log(Math.floor(Math.random() * (max - min + 1)) + min)  // random value between two integer
 
 // +++++++++++++++++++++ CHAT GPT ++++++++++++++++++++++++++++++++++++++
 
 // Numbers in JavaScript
 
 // 1️⃣ Declaring Numbers
-// let num1 = 42;       // Integer
-// let num2 = 3.14;     // Floating point number
-// let num3 = 5e3;      // Exponential notation (5000)
-// let num4 = 0b1010;   // Binary (10)
-// let num5 = 0o52;     // Octal (42)
-// let num6 = 0x2A;     // Hexadecimal (42)
+let num_1 = 42;       // Integer
+let num_2 = 3.14;     // Floating point number
+let num_3 = 5e3;      // Exponential notation (5000)
+let num_4 = 0b1010;   // Binary (10)
+let num_5 = 0o52;     // Octal (42)
+let num_6 = 0x2A;     // Hexadecimal (42)
 
 // 2️⃣ Special Numeric Values
 // NaN (Not-a-Number)
 // NaN is returned when an invalid numeric operation is performed.
-// console.log(0 / 0);        // NaN
-// console.log("hello" * 2);  // NaN
-// console.log(isNaN(NaN));   // true
+console.log(0 / 0);        // NaN
+console.log("hello" * 2);  // NaN
+console.log(isNaN(NaN));   // true
 
 // Infinity and -Infinity
-// console.log(1 / 0);  // Infinity
-// console.log(-1 / 0); // -Infinity
-// console.log(Number.MAX_VALUE * 2); // Infinity
+console.log(1 / 0);  // Infinity
+console.log(-1 / 0); // -Infinity
+console.log(Number.MAX_VALUE * 2); // Infinity
 
 // 3️⃣ Number Methods
 
