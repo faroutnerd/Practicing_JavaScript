@@ -153,3 +153,23 @@ console.log(randomNum);
 let bigNum = 123456789012345678901234567890n;
 console.log(bigNum + 10n);  // Works
 // console.log(bigNum + 10); // ❌ Error (Cannot mix BigInt and Number)
+
+
+// 4️⃣ Type Conversion
+// 1. String → Number
+console.log(Number("42"));       // 42
+console.log(parseInt("42.99"));  // 42
+console.log(parseFloat("42.99"));// 42.99
+console.log(+"42");              // 42 (Unary plus)
+
+// 2. Number → String
+console.log(String(42));      // "42"
+console.log((42).toString()); // "42"
+console.log(`${42}`);         // "42" (Template Literal)
+
+// 7️⃣ Comparison Issues (Floating-Point Precision)
+// JavaScript floating-point arithmetic can cause precision errors.
+console.log(0.1 + 0.2); // 0.30000000000000004 ❌
+console.log((0.1 + 0.2).toFixed(2)); // "0.30" ✅
+// Solution: Use .toFixed() or multiplication before division.
+console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3 ✅
