@@ -150,6 +150,7 @@ let randomNum = Math.floor(Math.random() * 100) + 1;
 console.log(randomNum);
 
 // ✅ BigInt (for very large numbers)
+// BigInt is used for large numbers beyond Number.MAX_SAFE_INTEGER.
 let bigNum = 123456789012345678901234567890n;
 console.log(bigNum + 10n);  // Works
 // console.log(bigNum + 10); // ❌ Error (Cannot mix BigInt and Number)
@@ -173,3 +174,27 @@ console.log(0.1 + 0.2); // 0.30000000000000004 ❌
 console.log((0.1 + 0.2).toFixed(2)); // "0.30" ✅
 // Solution: Use .toFixed() or multiplication before division.
 console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3 ✅
+
+// +++++++++++++++++++ Interview Question ++++++++++++++++++++++++
+
+// Q. What is the difference between toFixed() and toPrecision()?
+// ✅
+//  toFixed(n) fixes n decimal places.
+//  toPrecision(n) keeps n significant digits.
+    let num = 123.456;
+    console.log(num.toFixed(2));    // "123.46" (Rounded to 2 decimal places)
+    console.log(num.toPrecision(4)); // "123.5" (4 significant digits)
+
+// Q What is the difference between isNaN() and Number.isNaN()?
+// ✅
+// isNaN() converts values to numbers before checking.
+// Number.isNaN() checks directly without type conversion.
+    console.log(isNaN("Hello"));       // true (Converted to NaN)
+    console.log(Number.isNaN("Hello")); // false (Strict check)
+
+// Q Why does 0.1 + 0.2 !== 0.3 in JavaScript?
+// ✅
+// JavaScript uses floating-point arithmetic, causing precision errors.
+    console.log(0.1 + 0.2); // 0.30000000000000004 ❌
+    console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3 ✅ (Fix using multiplication)
+
