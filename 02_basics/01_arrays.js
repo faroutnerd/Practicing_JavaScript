@@ -1,116 +1,116 @@
-// // javaScript ke arrays resizable hotein hain
+// javaScript ke arrays resizable hotein hain
 
-// // Shallow Copy vs. Deep Copy in JavaScript 🚀
-// // When working with objects and arrays in JavaScript, copying them can be tricky. There are two types of copies:
+// Shallow Copy vs. Deep Copy in JavaScript 🚀
+// When working with objects and arrays in JavaScript, copying them can be tricky. There are two types of copies:
 
-// // 1️⃣ Shallow Copy – Copies only the first level, nested objects/arrays are referenced.
-// // 2️⃣ Deep Copy – Creates a completely independent copy, including nested objects/arrays.
+// 1️⃣ Shallow Copy – Copies only the first level, nested objects/arrays are referenced.
+// 2️⃣ Deep Copy – Creates a completely independent copy, including nested objects/arrays.
 
-// // 🌟SHALLLOW COPY🌟:
-// // A shallow copy means that only the top-level properties are copied, 
-// // while nested objects and arrays remain referenced. 
-// // If you modify a nested object in the copied structure, 
-// // it will reflect in the original object.
+// 🌟SHALLLOW COPY🌟:
+// A shallow copy means that only the top-level properties are copied, 
+// while nested objects and arrays remain referenced. 
+// If you modify a nested object in the copied structure, 
+// it will reflect in the original object.
 
-// // 📌 Example: Shallow Copy
-// let original = {
-//     name: "John",
-//     age: 30,
-//     address: { city: "New York", zip: 10001 }
-// };
+// 📌 Example: Shallow Copy
+let original = {
+    name: "John",
+    age: 30,
+    address: { city: "New York", zip: 10001 }
+};
 
-// // 🔹 Shallow copy using spread operator
-// // -> jb hum nested object me changes karenge tab hi original object me changes aayenge yehi shallow copy hota hai
-// let shallowCopy = { ...original };
-// shallowCopy.name = "Mike";  // ✅ Changes only in shallowCopy
-// shallowCopy.address.city = "Los Angeles";  // ❌ Changes in both shallowCopy and original
-// console.log(original);
-// // { name: "John", age: 30, address: { city: "Los Angeles", zip: 10001 } }
-// console.log(shallowCopy);
-// // { name: "Mike", age: 30, address: { city: "Los Angeles", zip: 10001 } }
+// 🔹 Shallow copy using spread operator
+// -> jb hum nested object me changes karenge tab hi original object me changes aayenge yehi shallow copy hota hai
+let shallowCopy = { ...original };
+shallowCopy.name = "Mike";  // ✅ Changes only in shallowCopy
+shallowCopy.address.city = "Los Angeles";  // ❌ Changes in both shallowCopy and original
+console.log(original);
+// { name: "John", age: 30, address: { city: "Los Angeles", zip: 10001 } }
+console.log(shallowCopy);
+// { name: "Mike", age: 30, address: { city: "Los Angeles", zip: 10001 } }
 
-// // ✅ Common Ways to Create a Shallow Copy
-// // 1. Using spread operator
-// let obj1 = { ...original };
+// ✅ Common Ways to Create a Shallow Copy
+// 1. Using spread operator
+let obj1 = { ...original };
 
-// // 2. Using Object.assign()
-// let obj2 = Object.assign({}, original);
+// 2. Using Object.assign()
+let obj2 = Object.assign({}, original);
 
-// // 3. Using slice() for arrays
-// let arr1 = [1, 2, 3];
-// let shallowArray = arr1.slice();
-
-
-// // 🌟Deep Copy (Independent Copy)🌟:
-// // A deep copy creates a completely new object, 
-// // including all nested objects and arrays, 
-// // making them fully independent of the original object.
-
-// // fark nahi penda ki hum nested me ya bahar wale me changes laa rahe hain original me koi changes nahi aayenge
-
-// // 📌 Example: Deep Copy
-// let original_ = {
-//     name: "John",
-//     age: 30,
-//     address: { city: "New York", zip: 10001 }
-// };
-
-// // ✅ Deep copy using JSON methods
-// let deepCopy = JSON.parse(JSON.stringify(original_));
-// deepCopy.name = "Mike";  // ✅ Changes only in deepCopy
-// deepCopy.address.city = "Los Angeles";  // ✅ Changes only in deepCopy
-
-// console.log(original);
-// // { name: "John", age: 30, address: { city: "New York", zip: 10001 } }
-
-// console.log(deepCopy);
-// // { name: "Mike", age: 30, address: { city: "Los Angeles", zip: 10001 } }
-
-// // ✅ Common Ways to Create a Deep Copy
-// // 🔸 1. Using JSON Methods (Fastest, But Limited)
-// let deepCopy = JSON.parse(JSON.stringify(original));
+// 3. Using slice() for arrays
+let arr__1 = [1, 2, 3];
+let shallowArray = arr__1.slice();
 
 
+// 🌟Deep Copy (Independent Copy)🌟:
+// A deep copy creates a completely new object, 
+// including all nested objects and arrays, 
+// making them fully independent of the original object.
 
-//ARRAY
+// fark nahi penda ki hum nested me ya bahar wale me changes laa rahe hain original me koi changes nahi aayenge
 
-// const myArr = [0, 1, 2, 3, 4, 5]
-// const myHeors = ["shaktiman", "naagraj"]
+// 📌 Example: Deep Copy
+let original_ = {
+    name: "John",
+    age: 30,
+    address: { city: "New York", zip: 10001 }
+};
 
-// const myArr2 = new Array(1, 2, 3, 4)
-// console.log(myArr[1]);  // 1
+// ✅ Deep copy using JSON methods
+let deepCopy = JSON.parse(JSON.stringify(original_));
+deepCopy.name = "Mike";  // ✅ Changes only in deepCopy
+deepCopy.address.city = "Los Angeles";  // ✅ Changes only in deepCopy
+
+console.log(original);
+// { name: "John", age: 30, address: { city: "New York", zip: 10001 } }
+
+console.log(deepCopy);
+// { name: "Mike", age: 30, address: { city: "Los Angeles", zip: 10001 } }
+
+// ✅ Common Ways to Create a Deep Copy
+// 🔸 1. Using JSON Methods (Fastest, But Limited)
+let deepCopy = JSON.parse(JSON.stringify(original));
+
+
+
+//ARRAY -----------------------------------------------------------------
+
+const myArr = [0, 1, 2, 3, 4, 5]
+const myHeors = ["shaktiman", "naagraj"]
+
+const myArr2 = new Array(1, 2, 3, 4)
+console.log(myArr[1]);  // 1
 
 // Array methods
 
-// myArr.push(6)
-// myArr.push(7)
-// myArr.pop()
+myArr.push(6)
+myArr.push(7)
+myArr.pop()
 
-// myArr.unshift(9)
-// myArr.shift()
+myArr.unshift(9)
+myArr.shift()
 
-// console.log(myArr.includes(9));
-// console.log(myArr.indexOf(3));
+console.log(myArr.includes(9));
+console.log(myArr.indexOf(3));
 
-// const newArr = myArr.join()
+const newArr = myArr.join()
 
-// console.log(myArr);
-// console.log( newArr);
+console.log(myArr);
+console.log( newArr);
 
 
 // slice, splice
 
-// console.log("A ", myArr);
+console.log("A ", myArr);
 
-// const myn1 = myArr.slice(1, 3)
+const myn1 = myArr.slice(1, 3)
 
-// console.log(myn1);
-// console.log("B ", myArr);
+console.log(myn1);
+console.log("B ", myArr);
 
 
-// const myn2 = myArr.splice(1, 3)
-// console.log("C ", myArr);
-// console.log(myn2);
+const myn2 = myArr.splice(1, 3)
+console.log("C ", myArr);
+console.log(myn2);
 
 // +++++++++++++++++++++CHAT GPT+++++++++++++++++++++++++
 // 1️⃣ Creating an Array
