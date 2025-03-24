@@ -175,6 +175,12 @@ let newAnimals = animals.slice(1, 3);  // Extracts elements from index 1 to 2
 console.log(newAnimals);  // ["Panda", "Bear"]
 console.log(animals);  // Original array remains unchanged
 
+// One more example of splice
+let z = [1,2,3,4,5];
+let y = z.splice(1, 3);
+console.log(z); // [ 1, 5 ]
+console.log(y); // [ 2, 3, 4 ]
+
 
 // 📌 Searching in Arrays
 let colors = ["Red", "Green", "Blue", "Yellow"];
